@@ -29,7 +29,10 @@ public class McpRollerApplication {
 
         @Tool(description = "Returns the results of a collection of dice")
         public String rollDice(String diceNotation) {
+            // get the individual results of all the dice
             ResultTree resultTree = Dice.detailedRoll(diceNotation);
+            // return the results a simple text string. Directly returning the ResultTree works too,
+            // Claude Sonnet 4 seemed to give detailed responses when using a string
             return "Result of rolling dice: " + resultTree.getValue() + ", individual roll results were:\n\n" + Dice.debug(resultTree);
         }
     }
