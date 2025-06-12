@@ -6,7 +6,9 @@ This version is using stdio, as to more easily integrate with existing clients.
 
 ## Build it
 
+```sh
 ./mvnw verify
+```
 
 ## Configure your client
 
